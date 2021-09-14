@@ -1,0 +1,33 @@
+<p>list works!</p>
+<a routerLink="/student-add">Add</a>
+<div class="form-group">
+
+  <input type="text" class="form-control" placeholder="Search server" [(ngModel)]="searchName">
+  <select class="form-control" [(ngModel)]="searchClass" >
+    <option ngValue="">Chọn lớp</option>
+    <option *ngFor="let class1 of classList" [ngValue]="class1.className">{{ class1.className}}</option>
+  </select>
+  <button class="btn btn-success" (click)="search()">Tìm kiếm </button>
+</div>
+<table class="table" *ngIf="listStudent">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">name</th>
+    <th scope="col">birthday</th>
+    <th scope="col">Class</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of listStudent">
+    <td>{{student.id}}</td>
+    <td>{{student.name}}</td>
+    <td>{{student.birthDay}}</td>
+    <td>{{student.studentClass.className}}</td>
+    <td><a [routerLink]="['/student-edit',student.id]"> Edit</a></td>
+    <td><button (click)="openDialogDelete(student.id,student.name)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>

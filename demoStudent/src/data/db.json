@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "id": 2,
+      "name": "chanh2",
+      "birthDay": "2021-09-14",
+      "studentClass": {
+        "id": 1,
+        "className": "A10"
+      }
+    },
+    {
+      "name": "chanh3",
+      "birthDay": "2021-09-14",
+      "studentClass": {
+        "id": 1,
+        "className": "A10"
+      },
+      "id": 3
+    }
+  ],
+  "studentClass": [
+    {
+      "id": 1,
+      "className": "A10"
+    },
+    {
+      "id": 2,
+      "className": "A11"
+    }
+  ]
+}

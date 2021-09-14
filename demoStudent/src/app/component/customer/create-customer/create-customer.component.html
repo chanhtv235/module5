@@ -1,0 +1,21 @@
+<p>create-customer works!</p>
+<form [formGroup]="customerForm" (ngSubmit)="add()">
+  <div class="form-group">
+    <label >Name</label>
+    <input type="text" class="form-control" formControlName="name" name="name" >
+  </div>
+  <div class="form-group">
+    <label >birthday</label>
+    <input type="date" class="form-control" formControlName="birthDay" name="birthDay">
+  </div>
+  <div class="form-group">
+    <label >Class</label>
+    <select class="form-control" formControlName="customerType" name="customerType">
+      <option selected [ngValue]="">Chọn lớp</option>
+      <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{ customerType.customerTypeName}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Add">
+  </div>
+</form>

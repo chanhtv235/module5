@@ -1,0 +1,32 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "chanh2",
+      "birthDay": "2021-09-14",
+      "customerType": {
+        "id": 1,
+        "customerTypeName": "gold"
+      }
+    },
+    {
+      "id": 2,
+      "name": "chanh3",
+      "birthDay": "2021-09-14",
+      "customerType": {
+        "id": 1,
+        "customerTypeName": "silver"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "customerTypeName": "gold"
+    },
+    {
+      "id": 2,
+      "customerTypeName": "silver"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<p>edit works!</p>
+<form [formGroup]="studentForm" (ngSubmit)="add()">
+  <div class="form-group">
+    <label >Name</label>
+    <input type="text" class="form-control" formControlName="name" name="name" >
+  </div>
+  <div class="form-group">
+    <label >birthday</label>
+    <input type="date" class="form-control" formControlName="birthDay" name="birthDay">
+  </div>
+  <div class="form-group">
+    <label >Class</label>
+    <select class="form-control" formControlName="studentClass" name="studentClass" [compareWith]="compare">
+      <option >Chọn lớp</option>
+      <option *ngFor="let class1 of classList" [ngValue]="class1">{{ class1.className}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Add">
+  </div>
+</form>

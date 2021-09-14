@@ -1,0 +1,33 @@
+<p>customer-list works!</p>
+<a routerLink="/customer-create">Create</a>
+<div class="form-group">
+
+  <input type="text" class="form-control" placeholder="Search name" [(ngModel)]="searchName">
+  <select class="form-control" [(ngModel)]="searchCustomerTypeName" >
+    <option selected value="">Chọn lớp</option>
+    <option *ngFor="let customerType of listCustomerType" [ngValue]="customerType.customerTypeName">{{ customerType.customerTypeName}}</option>
+  </select>
+  <button class="btn btn-success" (click)="search()">Tìm kiếm </button>
+</div>
+<table class="table" *ngIf="listCustomer">
+  <thead>
+  <tr>
+    <th scope="col">id</th>
+    <th scope="col">name</th>
+    <th scope="col">birthday</th>
+    <th scope="col">Customer Type</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of listCustomer">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.birthDay}}</td>
+    <td>{{customer.customerType.customerTypeName}}</td>
+<!--    <td><a [routerLink]="['/student-edit',student.id]"> Edit</a></td>-->
+    <td><button (click)="openDialogDelete(customer.id,customer.name)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
